@@ -1,0 +1,16 @@
+code,text,icon
+ABAP,ABAP,initiative
+RAP,ABAP RESTful (RAP),lab
+CAP,CAP (Node.js),database
+Fiori,SAP Fiori/UI5,screen
+CPI,SAP Integration Suite (CPI),cloud
+IDOC,IDoc/EDI,share
+OData,OData APIs,chain-link
+Adobe,Adobe Forms,file-pdf
+AI,SAP AI Core/Document AI,brain
+BPA,SAP Build Process Automation,workflow
+EWM,Extended Warehouse Mgmt,box
+PP,Production Planning,cogs
+FI,Financials (FI/CO),money
+SD,Sales & Distribution,cart
+MM,Materials Mgmt,package

@@ -1,0 +1,5 @@
+code,text
+ON,On-Stack Extension
+SB,Side-by-Side (BTP)
+API,API-Only Integration
+HYB,Hybrid (On-Stack + BTP)

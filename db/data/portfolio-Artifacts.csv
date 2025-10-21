@@ -1,0 +1,8 @@
+ID,task_ID,type_code,title,description,mediaPath,sourceCode,createdAt,createdBy,modifiedAt,modifiedBy
+a_t1_1,t1,DIAG,PO Approval Architecture,High-level RAP & FLP flow,/media/t1/diag1.png,,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+a_t1_2,t1,SHOT,PO Approver UI,Fiori Elements Object Page,/media/t1/ui1.png,,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+a_t2_1,t2,DIAG,EDI Flow (ORDERS/DESADV),CPI iFlow mapping to IDoc,/media/t2/diag1.png,,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+a_t2_2,t2,PDF,Mapping Spec,Partner EDI→IDoc mapping rules,/media/t2/spec.pdf,,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+a_t3_1,t3,DIAG,Returns ALP Design,Visual filters + actions,/media/t3/diag1.png,,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+a_t3_2,t3,CODE,Action Handler,Custom CAP action code,/media/t3/code1.txt,"// sample handler",2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+a_t9_1,t9,CODE,ATP Logic (RAP),Heuristic snippet,/media/t9/code1.txt,"* pseudo",2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada

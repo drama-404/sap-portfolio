@@ -1,0 +1,5 @@
+code,text,criticality
+MOCK,Mock Data,3
+WIP,In Progress,2
+DEMO,Demo Ready,4
+PUB,Published,4

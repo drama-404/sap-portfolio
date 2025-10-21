@@ -1,0 +1,5 @@
+ID,name,area_code,proficiency_code,notes,createdAt,createdBy,modifiedAt,modifiedBy
+sk1,ABAP,BE,L5,RAP & clean-core patterns,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+sk2,SAPUI5/Fiori,FR,L4,FE & freestyle,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+sk3,Integration (CPI/IDoc),INT,L4,Groovy & mappings,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada
+sk4,Procurement (S2P),FUNC,L3,MM/Ariba basics,2025-01-01T00:00:00Z,denada,2025-01-01T00:00:00Z,denada

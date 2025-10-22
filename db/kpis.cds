@@ -104,3 +104,17 @@ entity ProjectStackDepth as select from P.ProjectTechStacks {
   project,
   count(distinct techStack.code) as techCount : Integer
 } group by project;
+
+/* ────────────────────────────────────────────────────────────────────────────
+   TASK-LEVEL KPIs
+ * Artifact Mix per Task
+ * - Purpose: drive mini-bars/Harvey balls on Task Object Page (counts by type).
+ * - Pattern: group by (task, artifactType.code) and COUNT(*).
+ * - Why codes? Chart dimensions prefer stable, filterable codes/labels.
+ *   (Fiori Elements charts & micro charts bind to dimensions + measures). 
+ */
+entity TaskArtifactMix as select from P.Artifacts {
+  task,                              // backlink to Tasks (association)
+  type.code as typeCode,     // dimension (e.g., IMG/DIAG/CODE/PDF)
+  count(*)              as cnt : Integer
+} group by task, type.code;

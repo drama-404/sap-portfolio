@@ -104,3 +104,84 @@ entity Skills : cuid, managed {
   proficiency : Association to ProficiencyLevel;
   notes       : String(500);
 }
+
+// --- Add simple per-row computed properties ---
+
+extend Projects with {
+  durationDays : Integer @title:'Duration (days)' =
+    case
+      when startDate is null or endDate is null then null
+      when days_between(startDate, endDate) < 0 then 0         // clamp
+      else days_between(startDate, endDate)                    // correct order: start, end
+    end;
+}
+
+extend Tasks with {
+
+  /** 
+   * SOLUTION IMPACT as a clean 0–100 number (drives Radial Micro Chart).
+   * If you store a human string like '90%' in kpiImpact, we strip '%' and cast.
+   * Works in CAP calculated elements (on-read), forwarded to SQL (SQLite/HANA).
+   * Ref: CAP calculated elements (on-read semantics), CXN expressions. 
+
+     1) Strip spaces/%/± (incl. Unicode U+2212), plus and minus
+     2) CAST to Decimal
+     3) ABS to drop any leftover sign
+     4) Clamp to 0..100 (CASE for SQLite/HANA portability)
+  */
+  solutionImpactPct : Decimal(5,2) @title:'Solution Impact %' =
+    case
+      when abs(
+             cast(
+               replace(
+                 replace(
+                   replace(
+                     replace(
+                       replace( ifnull(kpiImpact,'0'), ' ', ''),  /* trim spaces   */
+                     '%',''),                                     /* drop percent  */
+                   '−',''),                                       /* Unicode minus */
+                 '+',''),                                         /* plus sign     */
+               '-','')                                            /* ASCII minus   */
+             as Decimal(5,2))
+           ) > 100
+      then 100
+      else abs(
+             cast(
+               replace(
+                 replace(
+                   replace(
+                     replace(
+                       replace( ifnull(kpiImpact,'0'), ' ', '' ),
+                     '%',''),
+                   '−',''),
+                 '+',''),
+               '-','')
+             as Decimal(5,2))
+           )
+    end;
+
+  /**
+   * READINESS as % (simple, status-based) — also handy for a radial or progress bar.
+   */
+  readinessPct : Decimal(5,2)
+    @title : 'Readiness %'
+    = case
+         when implementationStatus.code in ('DEMO','PUB') then 100
+         when implementationStatus.code =  'WIP'          then 60
+         when implementationStatus.code =  'MOCK'         then 30
+         else 0
+       end;
+
+  /**
+   * READINESS semantic color (Criticality) for Fiori Elements.
+   * UI criticality codes commonly used: 0/NULL=Neutral, 1=Negative, 2=Critical, 3=Positive (5=New). 
+   * We mark completed (DEMO/PUB) as Positive, WIP/MOCK as Critical, others as Negative.
+   */
+  readinessCriticality : Integer
+    @title : 'Readiness Criticality'
+    = case
+         when implementationStatus.code in ('DEMO','PUB') then 3  /* Positive  */
+         when implementationStatus.code in ('WIP','MOCK') then 2  /* Critical  */
+         else 1                                                  /* Negative  */
+       end;
+       }

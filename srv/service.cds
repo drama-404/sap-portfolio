@@ -35,17 +35,47 @@ service portfolio_service {
   entity Certifications         as projection on portfolio.Certifications;
   entity Skills                 as projection on portfolio.Skills;
 
+/* Portfolio-level KPIs (from your kpis.cds) */
   entity PortfolioTotals                as projection on kpi.PortfolioTotals;
   entity PortfolioTaskTotals            as projection on kpi.PortfolioTaskTotals;
   entity PortfolioCompletion            as projection on kpi.PortfolioCompletion;
   entity PortfolioExtensionMix          as projection on kpi.PortfolioExtensionMix;
-  // entity ProjectProcessCoverage         as projection on kpi.ProjectProcessCoverage;
-  // @cds.redirection.target: false
-  // entity ProjectTechDiversity           as projection on kpi.ProjectTechDiversity;
-  // @cds.redirection.target: false
-  // entity PortfolioTechDiversitySummary  as projection on kpi.PortfolioTechDiversitySummary;
-  // @cds.redirection.target: false
-  // entity PortfolioDemoReadiness         as projection on kpi.PortfolioDemoReadiness;
+  entity ProjectProcessCoverage         as projection on kpi.ProjectProcessCoverage;
+  @cds.redirection.target: false
+  entity ProjectTechDiversity           as projection on kpi.ProjectTechDiversity;
+  @cds.redirection.target: false
+  entity PortfolioTechDiversitySummary  as projection on kpi.PortfolioTechDiversitySummary;
+  @cds.redirection.target: false
+  entity PortfolioDemoReadiness         as projection on kpi.PortfolioDemoReadiness;
+
+   /* Project-level KPI projections (these are metric feeds; not redirect targets) */
+  @cds.redirection.target : false
+  entity ProjectTaskStatusAgg as projection on kpi.ProjectTaskStatusAgg;
+
+  @cds.redirection.target : false
+  entity ProjectComplexityWeighted as projection on kpi.ProjectComplexityWeighted;
+
+  @cds.redirection.target : false
+  entity ProjectProcessFootprint as projection on kpi.ProjectProcessFootprint;
+
+  @cds.redirection.target : false
+  entity ProjectStackDepth as projection on kpi.ProjectStackDepth;
+
+  // /* Optional: expose navigations from Projects to KPI feeds (read-only helper assocs) */
+  // entity ProjectsWithKPIs as projection on Projects {
+  //   *,
+  //   taskStatus : Association to many ProjectTaskStatusAgg
+  //     on taskStatus.project = $self,
+
+  //   complexityKpi : Association to one ProjectComplexityWeighted
+  //     on complexityKpi.project = $self,
+
+  //   processFootprint : Association to many ProjectProcessFootprint
+  //     on processFootprint.project = $self,
+
+  //   stackDepthKpi : Association to one ProjectStackDepth
+  //     on stackDepthKpi.project = $self
+  // };
 }
 
 

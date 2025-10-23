@@ -184,4 +184,22 @@ extend Tasks with {
          when implementationStatus.code in ('WIP','MOCK') then 2  /* Critical  */
          else 1                                                  /* Negative  */
        end;
-       }
+
+     /**
+   * Cycle Time (days)
+   *
+   * This calculated element returns the difference between a task’s
+   * `modifiedAt` and `createdAt` timestamps in days.  CAP’s
+   * `seconds_between()` function computes the difference in seconds;
+   * dividing by 86 400 converts seconds to days.  The `round()`
+   * function limits the result to two decimal places.  If either
+   * timestamp is null the expression evaluates to null.
+   */
+  cycleTimeDays : Decimal(9,2) 
+  @title:'Cycle Time (days)'
+    = case
+        when createdAt is not null and modifiedAt is not null
+          then round(seconds_between(modifiedAt, createdAt) / 86400, 2)
+        else null
+      end;
+    }

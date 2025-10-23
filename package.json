@@ -34,6 +34,9 @@
     "watch-sap.hr": "cds watch --open portfolio.sap.hr/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
+     "plugins": {
+      "cds-plugin-ui5": {}
+    },
     "requires": {
       "[production]": {
         "db": "hana",

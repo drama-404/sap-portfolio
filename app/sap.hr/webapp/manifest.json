@@ -60,7 +60,11 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "portfolio.sap.hr.i18n.i18n"
+          "bundleUrl": "i18n/i18n.properties",
+          "supportedLocales": [
+            "en"
+          ],
+          "fallbackLocale": "en"
         }
       },
       "": {
@@ -71,10 +75,6 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
       }
     },
     "resources": {
@@ -98,54 +98,12 @@
         "ProjectTaskStatusAggList": {
           "type": "Component",
           "id": "ProjectTaskStatusAggList",
-          "name": "sap.fe.templates.ListReport",
+          "name": "sap.fe.templates.AnalyticalListPage",
           "options": {
             "settings": {
-              "contextPath": "/ProjectTaskStatusAgg",
-              "variantManagement": "Page",
-              "navigation": {
-                "ProjectTaskStatusAgg": {
-                  "detail": {
-                    "route": "ProjectTaskStatusAggObjectPage"
-                  }
-                }
-              },
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.LineItem": {
-                  "tableSettings": {
-                    "type": "AnalyticalTable",
-                    "selectionMode": "Single"
-                  }
-                }
-              },
-              "views": {
-                "paths": [
-                  {
-                    "primary": [
-                      {
-                        "annotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant"
-                      }
-                    ],
-                    "secondary": [
-                      {
-                        "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
-                      }
-                    ],
-                    "defaultPath": "both"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "ProjectTaskStatusAggObjectPage": {
-          "type": "Component",
-          "id": "ProjectTaskStatusAggObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/ProjectTaskStatusAgg"
+              "entitySet": "ProjectTaskStatusAgg",
+              "annotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Main",
+              "variantManagement": "Page"
             }
           }
         }

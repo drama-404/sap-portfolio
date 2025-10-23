@@ -8,10 +8,12 @@ namespace kpi;
    services (counts, sums, percentages) that the UI can bind to.              */
 /* ALP reference: KPI tags & visual filters. */
 entity PortfolioTotals as select from P.Projects {
+  key '1' as ID : String,
   count(*) as projectsTotal : Integer
 };
 /* KPI tag: total tasks */
 entity PortfolioTaskTotals as select from P.Tasks {
+  key '1' as ID : String,
   count(*) as tasksTotal : Integer
 };
 
@@ -19,6 +21,7 @@ entity PortfolioTaskTotals as select from P.Tasks {
    - Guard division by zero with nullif(count(*),0)
    - Provide both raw counts (for cards) and % (for radial micro-chart) */
 entity PortfolioCompletion as select from P.Tasks {
+  key '1' as ID : String,
   count(*) as totalTasks    : Integer,
   sum(case when implementationStatus.code in ('DEMO','PUB') then 1 else 0 end)
       as doneTasks          : Integer,
@@ -29,32 +32,34 @@ entity PortfolioCompletion as select from P.Tasks {
 
 /* Extension Mix (donut visual filter): dimension + count */
 entity PortfolioExtensionMix as select from P.Tasks {
-  extensionType.code as extType,
+  key extensionType.code as extType,
   count(*)           as cnt : Integer
 } group by extensionType.code;
 
 /* Process Coverage (stacked bar): one row per (project, processArea)
    - UI can SUM(covered) by processArea to show footprint */
 entity ProjectProcessCoverage as select from P.ProjectProcessAreas {
-  project,
-  processArea,
+  key project,
+  key processArea,
   1 as covered : Integer
 };
 
 /* Tech Diversity: distinct tech stacks per project (key metric for “depth”) */
 entity ProjectTechDiversity as select from P.ProjectTechStacks {
-  project,
+  key project,
   count(distinct techStack.code) as techCount : Integer
 } group by project;
 
 /* Optional: portfolio overview of tech diversity (avg & max for header card) */
 entity PortfolioTechDiversitySummary as select from kpi.ProjectTechDiversity {
+  key project,
   avg(techCount) as avgTechsPerProject : Decimal(9,2),
   max(techCount) as maxTechsInProject  : Integer
 };
 
 /* Demo Readiness % = same logic as completion (for a separate KPI tag if desired) */
 entity PortfolioDemoReadiness as select from P.Tasks {
+  key '1' as ID : String,
   cast(100.0 *
        sum(case when implementationStatus.code in ('DEMO','PUB') then 1 else 0 end)
        / nullif(count(*),0) as Decimal(5,2)) as readinessPct
@@ -72,15 +77,15 @@ entity PortfolioDemoReadiness as select from P.Tasks {
 
 /* 1) Task Count by Status — for header chips or small bar */
 entity ProjectTaskStatusAgg as select from P.Tasks {
-  project,                                      // dimension (per project)
-  implementationStatus.code as status,          // dimension (status)
+  key project,                                      // dimension (per project)
+  key implementationStatus.code as status,          // dimension (status)
   count(*)                        as cnt : Integer
 } group by project, implementationStatus.code;
 
 /* 2) Weighted Complexity Score — for bullet/micro chart in header
       HIGH=3, MED=2, LOW=1 (others=0) then SUM per project */
 entity ProjectComplexityWeighted as select from P.Tasks {
-  project,
+  key project,
   sum(
     case
       when complexityLevel.code = 'HIGH' then 3
@@ -94,14 +99,14 @@ entity ProjectComplexityWeighted as select from P.Tasks {
 /* 3) Process Area Footprint — counts per process area per project
       (use in stacked bars or matrix lists) */
 entity ProjectProcessFootprint as select from P.ProjectProcessAreas {
-  project,
-  processArea.code               as processArea,
+  key project,
+  key processArea.code               as processArea,
   count(*)                       as cnt : Integer
 } group by project, processArea.code;
 
 /* 4) Stack Depth — distinct tech stacks per project (key value facet) */
 entity ProjectStackDepth as select from P.ProjectTechStacks {
-  project,
+  key project,
   count(distinct techStack.code) as techCount : Integer
 } group by project;
 
@@ -114,7 +119,7 @@ entity ProjectStackDepth as select from P.ProjectTechStacks {
  *   (Fiori Elements charts & micro charts bind to dimensions + measures). 
  */
 entity TaskArtifactMix as select from P.Artifacts {
-  task,                              // backlink to Tasks (association)
-  type.code as typeCode,     // dimension (e.g., IMG/DIAG/CODE/PDF)
+  key task,                              // backlink to Tasks (association)
+  key type.code as typeCode,     // dimension (e.g., IMG/DIAG/CODE/PDF)
   count(*)              as cnt : Integer
 } group by task, type.code;

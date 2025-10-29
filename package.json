@@ -1,0 +1,16 @@
+{
+  "name": "sap-portfolio-cap-app",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "dependencies": {
+    "@sap/cds": "^9.4.4",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true
+}

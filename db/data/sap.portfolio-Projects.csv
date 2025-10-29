@@ -1,0 +1,2 @@
+ID,title,subTitle,industry_code,status_code,startDate,endDate,summary,githubUrl,demoUrl,coverImageUrl,createdAt,createdBy,modifiedAt,modifiedBy
+11111111-1111-1111-1111-111111111111,Balocco S/4HANA Greenfield,End-to-end greenfield rollout,CPG,DONE,2024-01-01,2024-06-30,High-level summary,https://github.com/your-org/your-repo,https://example.com/demo,https://example.com/cover.jpg

@@ -1,0 +1,4 @@
+code,name,createdAt,createdBy,modifiedAt,modifiedBy
+ACTIVE,Active
+DONE,Completed
+CANCELED,Canceled

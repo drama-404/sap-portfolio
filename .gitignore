@@ -1,0 +1,56 @@
+# CAP cv-portfolio
+_out
+*.db
+*.sqlite
+connection.properties
+default-*.json
+.cdsrc-private.json
+gen/
+node_modules/
+target/
+.cds_gen.log
+
+# Web IDE, App Studio
+.che/
+.gen/
+
+# MTA
+*_mta_build_tmp
+*.mtar
+mta_archives/
+
+# Other
+.DS_Store
+*.orig
+*.log
+*.pid
+*.seed
+*.iml
+*.project
+*.classpath
+.settings/
+*.flattened-pom.xml
+
+# IDEs (uncomment if you want to ignore IDE settings)
+# .vscode/
+# .idea/
+
+# @cap-js/cds-typer
+@cds-models
+
+# Local environment
+.env
+.env.local
+
+# Build artifacts
+dist/
+build/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.swp
+*~

@@ -1,0 +1,57 @@
+{
+  "name": "cv-portfolio",
+  "version": "1.0.0",
+  "description": "Living CV/Portfolio - SAP CAP Application with Fiori Elements Analytical List Page",
+  "author": "Denada Rama <denadaramatech@gmail.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@sap/cds": "^9",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9",
+    "@sap/eslint-plugin-cds": "^3",
+    "@sap/ux-specification": "^1.120",
+    "eslint": "^9",
+    "rimraf": "^5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch",
+    "build": "cds build --production",
+    "deploy": "cds deploy",
+    "clean": "rimraf node_modules package-lock.json gen",
+    "test": "echo \"No tests specified yet\" && exit 0"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "cv-portfolio.db"
+        }
+      },
+      "[production]": {
+        "db": {
+          "kind": "hana"
+        }
+      }
+    },
+    "fiori": {
+      "lean_draft": true
+    },
+    "odata": {
+      "version": "v4"
+    }
+  },
+  "private": true,
+  "sapux": true
+}

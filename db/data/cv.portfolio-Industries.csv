@@ -1,0 +1,8 @@
+ID,code,name,description
+h0000000-0001-0000-0000-000000000001,FMCG,Fast-Moving Consumer Goods,Consumer packaged goods with high turnover
+h0000000-0002-0000-0000-000000000001,AUTO,Automotive,Motor vehicle manufacturing and services
+h0000000-0003-0000-0000-000000000001,PHARMA,Pharmaceutical,Drug development and healthcare products
+h0000000-0004-0000-0000-000000000001,RETAIL,Retail,Consumer goods retail and distribution
+h0000000-0005-0000-0000-000000000001,MFG,Manufacturing,Industrial manufacturing and production
+h0000000-0006-0000-0000-000000000001,ELEC,Electronics,Electronics manufacturing and distribution
+h0000000-0007-0000-0000-000000000001,INDUS,Industrial Equipment,Heavy machinery and industrial equipment

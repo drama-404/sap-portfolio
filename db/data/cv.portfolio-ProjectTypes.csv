@@ -1,0 +1,8 @@
+ID,code,name,description
+i0000000-0001-0000-0000-000000000001,GREENFIELD,Greenfield Implementation,New SAP implementation from scratch
+i0000000-0002-0000-0000-000000000001,BROWNFIELD,Brownfield Conversion,Technical conversion from ECC to S/4HANA
+i0000000-0003-0000-0000-000000000001,HYBRID,Hybrid Implementation,Combination of new implementation and migration
+i0000000-0004-0000-0000-000000000001,ROLLOUT,Rollout Project,Extension of existing template to new regions/entities
+i0000000-0005-0000-0000-000000000001,MIGRATION,Cloud Migration,Migration to cloud platform (RISE, Azure, etc.)
+i0000000-0006-0000-0000-000000000001,INTEGRATION,Integration Project,System integration and middleware implementation
+i0000000-0007-0000-0000-000000000001,ENHANCEMENT,Enhancement Project,Application modernization and enhancement

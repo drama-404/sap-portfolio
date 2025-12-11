@@ -1,0 +1,4 @@
+ID,name,issuingOrg,certificationType,issueDate,expiryDate,credentialUrl,credentialId,description
+e0000000-0000-0001-0000-000000000001,SAP Certified Associate - Back-End Developer - ABAP Cloud,SAP,SAP,2025-07-15,,https://www.credly.com/badges/example,C_ABAPD_2309,"Official SAP certification validating expertise in ABAP Cloud development, RESTful programming model, and cloud-native architecture."
+e0000000-0000-0002-0000-000000000001,MSc. Data Science,University of Greenwich,Academic,2024-05-30,,,,"Master of Science in Data Science with Distinction. Focus on machine learning, AI systems, and data analytics."
+e0000000-0000-0003-0000-000000000001,BSc. Computer Engineering,Epoka University,Academic,2021-06-20,,,,"Bachelor of Science in Computer Engineering with High Honours. Strong foundation in software development and system design."

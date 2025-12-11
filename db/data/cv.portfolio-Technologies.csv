@@ -1,0 +1,31 @@
+ID,name,category,description,officialUrl
+f0000000-0000-0001-0000-000000000001,ABAP,Backend,Advanced Business Application Programming language for SAP development,https://www.sap.com/products/technology-platform/abap-platform.html
+f0000000-0000-0002-0000-000000000001,ABAP Cloud,Backend,Modern cloud-ready ABAP development with clean core principles,https://community.sap.com/topics/abap
+f0000000-0000-0003-0000-000000000001,RAP (RESTful ABAP Programming),Backend,ABAP RESTful Application Programming Model for building OData services,https://cap.cloud.sap/docs/advanced/fiori
+f0000000-0000-0004-0000-000000000001,CDS Views,Backend,Core Data Services for data modeling and annotations,https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767
+f0000000-0000-0005-0000-000000000001,AMDP,Backend,ABAP Managed Database Procedures for HANA-optimized code,https://help.sap.com/docs/ABAP_PLATFORM
+f0000000-0000-0006-0000-000000000001,SAP Fiori Elements,Frontend,Template-based UI development framework,https://ui5.sap.com/test-resources/sap/fe/core/fpmExplorer/index.html
+f0000000-0000-0007-0000-000000000001,SAPUI5,Frontend,HTML5-based UI development framework,https://ui5.sap.com
+f0000000-0000-0008-0000-000000000001,SAP BTP,Cloud,SAP Business Technology Platform for cloud extensions,https://www.sap.com/products/business-technology-platform.html
+f0000000-0000-0009-0000-000000000001,SAP CAP,Backend,Cloud Application Programming Model for cloud-native apps,https://cap.cloud.sap
+f0000000-0000-0010-0000-000000000001,Node.js,Backend,JavaScript runtime for server-side development,https://nodejs.org
+f0000000-0000-0011-0000-000000000001,SAP HANA,Database,In-memory database platform,https://www.sap.com/products/technology-platform/hana.html
+f0000000-0000-0012-0000-000000000001,SQLite,Database,Lightweight embedded database,https://www.sqlite.org
+f0000000-0000-0013-0000-000000000001,SAP CPI,Integration,SAP Cloud Platform Integration for middleware,https://help.sap.com/docs/CLOUD_INTEGRATION
+f0000000-0000-0014-0000-000000000001,OData,Integration,Open Data Protocol for RESTful APIs,https://www.odata.org
+f0000000-0000-0015-0000-000000000001,REST API,Integration,Representational State Transfer API architecture,
+f0000000-0000-0016-0000-000000000001,IDocs,Integration,Intermediate Documents for SAP system integration,https://help.sap.com/docs/SAP_NETWEAVER
+f0000000-0000-0017-0000-000000000001,Eclipse ADT,Tools,ABAP Development Tools for Eclipse IDE,https://tools.eu1.hana.ondemand.com
+f0000000-0000-0018-0000-000000000001,Git,Tools,Version control system,https://git-scm.com
+f0000000-0000-0019-0000-000000000001,SAP Build Apps,Cloud,Low-code/no-code application development platform,https://www.sap.com/products/technology-platform/build-apps.html
+f0000000-0000-0020-0000-000000000001,Adobe Forms,Frontend,PDF form generation for SAP,https://help.sap.com/docs/SAP_NETWEAVER
+f0000000-0000-0021-0000-000000000001,Smart Forms,Frontend,SAP form development tool,https://help.sap.com/docs/SAP_NETWEAVER
+f0000000-0000-0022-0000-000000000001,SAP Analytics Cloud,Analytics,Cloud-based business intelligence platform,https://www.sap.com/products/technology-platform/cloud-analytics.html
+f0000000-0000-0023-0000-000000000001,AWS S3,Cloud,Amazon Web Services Simple Storage Service,https://aws.amazon.com/s3
+f0000000-0000-0024-0000-000000000001,Azure,Cloud,Microsoft Azure cloud platform,https://azure.microsoft.com
+f0000000-0000-0025-0000-000000000001,Document Information Extraction,AI,SAP BTP AI service for document processing,https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION
+f0000000-0000-0026-0000-000000000001,Groovy,Backend,Programming language for scripting in CPI,https://groovy-lang.org
+f0000000-0000-0027-0000-000000000001,JavaScript,Frontend,Programming language for web development,https://developer.mozilla.org/en-US/docs/Web/JavaScript
+f0000000-0000-0028-0000-000000000001,Leaflet,Frontend,JavaScript library for interactive maps,https://leafletjs.com
+f0000000-0000-0029-0000-000000000001,SAP S/4HANA,ERP,SAP's next-generation ERP suite,https://www.sap.com/products/erp/s4hana.html
+f0000000-0000-0030-0000-000000000001,ABAP Test Cockpit,Tools,Code quality and readiness check tool,https://help.sap.com/docs/ABAP_PLATFORM

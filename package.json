@@ -21,7 +21,8 @@
     "@sap/eslint-plugin-cds": "^3",
     "@sap/ux-specification": "^1.120",
     "eslint": "^9",
-    "rimraf": "^5"
+    "rimraf": "^5",
+    "cds-plugin-ui5": "^0.13.0"
   },
   "scripts": {
     "start": "cds-serve",
@@ -29,7 +30,8 @@
     "build": "cds build --production",
     "deploy": "cds deploy",
     "clean": "rimraf node_modules package-lock.json gen",
-    "test": "echo \"No tests specified yet\" && exit 0"
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
@@ -53,5 +55,10 @@
     }
   },
   "private": true,
-  "sapux": true
+  "sapux": [
+    "app/project1"
+  ],
+  "workspaces": [
+    "app/*"
+  ]
 }

@@ -1,16 +1,16 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Fri Dec 12 2025 15:31:20 GMT+0100 (Central European Standard Time)|
+|**Generation Date and Time**<br>Fri Dec 12 2025 17:37:04 GMT+0100 (Central European Standard Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.20.0|
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local CAP|
 |**Service URL**<br>http://localhost:4004/odata/v4/cvportfolio/|
-|**Module Name**<br>project1|
-|**Application Title**<br>App Title|
-|**Namespace**<br>|
+|**Module Name**<br>projects|
+|**Application Title**<br>My SAP Portfolio|
+|**Namespace**<br>cv.portfolio|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.143.2|
 |**Enable Code Assist Libraries**<br>False|
@@ -19,7 +19,7 @@
 |**Main Entity**<br>Projects|
 |**Navigation Entity**<br>None|
 
-## project1
+## projects
 
 An SAP Fiori application.
 
@@ -27,7 +27,7 @@ An SAP Fiori application.
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated app, start your CAP project:  and navigate to the following location in your browser:
 
-http://localhost:4004/project1/webapp/index.html
+http://localhost:4004/projects/webapp/index.html
 
 #### Pre-requisites:
 

@@ -25,8 +25,8 @@ entity Profile : cuid, managed {
 entity Projects : cuid, managed {
   title           : String(200) not null;
   company         : String(200) not null;
-  industry        : String(100);
-  projectType     : String(50) not null; // Greenfield, Brownfield, Hybrid, Rollout, etc.
+  industry        : Association to Industries;
+  projectType     : Association to ProjectTypes not null;
   startDate       : Date not null;
   endDate         : Date;
   description     : LargeString;
@@ -103,7 +103,9 @@ entity ProjectTechnologies : cuid {
 /**
  * Industries Code List
  * Standardized industry sectors
+ * @cds.odata.valuelist enables automatic value help in Fiori
  */
+@cds.odata.valuelist
 entity Industries : cuid {
   code            : String(20) not null;
   name            : String(100) not null;
@@ -113,9 +115,23 @@ entity Industries : cuid {
 /**
  * ProjectTypes Code List
  * Standardized project type classifications
+ * @cds.odata.valuelist enables automatic value help in Fiori
  */
+@cds.odata.valuelist
 entity ProjectTypes : cuid {
   code            : String(50) not null;
   name            : String(100) not null;
   description     : String(500);
 }
+
+annotate Projects with @(
+Capabilities: {
+	FilterRestrictions : {FilterExpressionRestrictions : [{
+		Property	: 'startDate',
+		AllowedExpressions: 'SingleRange'
+	},
+	{
+		Property	: 'endDate',
+		AllowedExpressions: 'SingleRange'
+	}]}
+});

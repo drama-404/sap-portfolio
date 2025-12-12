@@ -31,7 +31,7 @@
     "deploy": "cds deploy",
     "clean": "rimraf node_modules package-lock.json gen",
     "test": "echo \"No tests specified yet\" && exit 0",
-    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-projects": "cds watch --open cv.portfolio.projects/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
@@ -55,10 +55,10 @@
     }
   },
   "private": true,
-  "sapux": [
-    "app/project1"
-  ],
   "workspaces": [
     "app/*"
+  ],
+  "sapux": [
+    "app/projects"
   ]
 }
